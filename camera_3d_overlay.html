@@ -12,13 +12,21 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Load the 3D model
+        // Load the 3D model with debugging event listeners
         const loader = new THREE.GLTFLoader();
         let model;
-        loader.load('https://go.echo3d.co/jvwq', (gltf) => {
-            model = gltf.scene;
-            scene.add(model);
-        });
+        loader.load('https://go.echo3d.co/jvwq', 
+            (gltf) => {
+                model = gltf.scene;
+                scene.add(model);
+            },
+            (xhr) => {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded'); // This logs the loading progress
+            },
+            (error) => {
+                console.error('An error occurred while loading the model:', error); // This logs any errors during loading
+            }
+        );
 
         // Set the camera feed as background
         const video = document.createElement('video');
