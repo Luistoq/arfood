@@ -2,6 +2,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 # Load the custom component
-camera_component = components.html(open("camera_component.html").read(), height=600)
+camera_3d_overlay = components.html(open("camera_3d_overlay.html").read(), height=600)
 
-st.write("Point your camera at a Hiro marker to view the 3D model in AR.")
+st.write("Camera feed with 3D model overlay.")
