@@ -22,8 +22,8 @@ def render_selected_model(api_key, security_key, entry_id):
 def main():
     st.title("Echo3D Integration with Streamlit")
     
-    api_key = st.text_input("Enter your Echo3D API Key:", type="password")
-    security_key = st.text_input("Enter your Echo3D Security Key:", type="password")
+    api_key = st.text_input("Enter your Echo3D API Key:", type="solitary-dream-8207")
+    security_key = st.text_input("Enter your Echo3D Security Key:", type="7e5d1522-bc79-4cad-a0be-4c12743a2520")
     
     if st.button("Fetch 3D Models"):
         model_list = fetch_3d_models(api_key, security_key)
